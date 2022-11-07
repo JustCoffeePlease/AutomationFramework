@@ -18,17 +18,15 @@ public class SearchTest {
         //Переход на URL
         googleDriver.navigate().to("https://www.google.com/");
 //        driver.get("https://www.google.com/");
-
 //        driver.get("https://www.youtube.com/");
 //        driver.navigate().refresh();
-
         //Возвращаем название страницы
         System.out.println(googleDriver.getTitle());
         //Закрытие браузера
         googleDriver.quit();
     }
 
-    @Test
+/*    @Test
     public void openIExpInIEDriverServerTest() {
         File file = new File("C:/Users/Алексей/IdeaProjects/AutomationFramework/src/test/resources/IEDriverServer.exe");
         System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
@@ -37,5 +35,5 @@ public class SearchTest {
         driver.navigate().refresh();
         System.out.println(driver.getTitle());
         driver.quit();
-    }
+    }*/
 }
