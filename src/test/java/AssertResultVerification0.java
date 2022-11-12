@@ -11,7 +11,7 @@ import java.io.File;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class AssertResultVerification {
+public class AssertResultVerification0 {
 
     @Test
     public void assertMethod(){
@@ -38,9 +38,6 @@ public class AssertResultVerification {
 
         System.out.println(valSum);
 
-
-
-
-
+        gDriver.quit();
     }
 }

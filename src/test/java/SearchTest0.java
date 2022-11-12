@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.util.List;
 
-public class SearchTest {
+public class SearchTest0 {
 
     @Test
     public void openGoogleComInChromeTest() {

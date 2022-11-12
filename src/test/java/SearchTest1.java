@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class SearchTestEx1 {
+public class SearchTest1 {
 
     @Test
     public void commandLineWork() {
