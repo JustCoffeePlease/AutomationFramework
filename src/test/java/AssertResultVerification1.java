@@ -1,3 +1,4 @@
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -31,9 +32,14 @@ public class AssertResultVerification1 {
         // //div[@class='yuRUbf']//h3
         WebElement resultRow = gDriver.findElement(By.xpath("//div[@class='yuRUbf']//*[@class='LC20lb MBeuO DKV0Md']"));
 
-        Assert.assertTrue(resultRow.isDisplayed(), "Element has not been displayed!");
-        Assert.assertEquals(resultRow.getText(), "WebDriver - Selenium", "Wrong text has been displayed!");
-        Assert.assertEquals(resultRow.getAttribute("class"), "LC20lb MBeuO DKV0Md", "Wrong attribute text!");
+//        Assert.assertTrue(resultRow.isDisplayed(), "Element has not been displayed!");
+//        Assert.assertEquals(resultRow.getText(), "WebDriver - Selenium", "Wrong text has been displayed!");
+//        Assert.assertEquals(resultRow.getAttribute("class"), "LC20lb MBeuO DKV0Md", "Wrong attribute text!");
+
+        //Same asserts but using AssertJ
+        Assertions.assertThat(resultRow.isDisplayed()).as("Element has not been displayed!").isTrue();
+        Assertions.assertThat(resultRow.getText()).as("Wrong text has been displayed!").isEqualToIgnoringCase("WebDriver - Selenium");
+        Assertions.assertThat(resultRow.getAttribute("class")).as("Wrong attribute text!").contains("_LC20lb");
 
         gDriver.quit();
     }
