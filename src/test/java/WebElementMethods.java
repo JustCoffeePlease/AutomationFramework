@@ -24,8 +24,8 @@ public class WebElementMethods {
         searchField.sendKeys("selenium java");
         searchField.sendKeys(Keys.RETURN);
 
-        //sleeping for a 30 sec -> BAD PRACTICE
-//        Thread.sleep(3000);
+        //sleeping for a 3sec -> BAD PRACTICE
+        Thread.sleep(3000);
 
         // //div[@class='yuRUbf']//h3
         WebElement resultRow = gDriver.findElement(By.xpath("//div[@class='yuRUbf']//h3"));
