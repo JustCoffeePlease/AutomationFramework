@@ -56,7 +56,7 @@ public class AssertResultVerification {
         WebElement resultRow = gDriver.findElement(By.xpath("//div[@class='yuRUbf']//*[@class='LC20lb MBeuO DKV0Md']"));
 
 //        Assert.assertTrue(resultRow.isDisplayed(), "Element has not been displayed!");
-//        Assert.assertEquals(resultRow.getText(), "WebDriver - Selenium", "Wrong text has been displayed!");
+        Assert.assertEquals(resultRow.getText(), "WebDriver - Selenium", "Wrong text has been displayed!");
 //        Assert.assertEquals(resultRow.getAttribute("class"), "LC20lb MBeuO DKV0Md", "Wrong attribute text!");
 
         //Same asserts but using AssertJ

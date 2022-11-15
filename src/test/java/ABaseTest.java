@@ -21,19 +21,19 @@ public abstract class ABaseTest {
     public void setUp() {
 
         File chromeFile = new File("C:/Users/Алексей/IdeaProjects/AutomationFramework/src/test/resources/chromedriver.exe");
-        File edgeFile = new File("C:/Users/Алексей/IdeaProjects/AutomationFramework/src/test/resources/edgedriver_win64/msedgedriver.exe");
+//        File edgeFile = new File("C:/Users/Алексей/IdeaProjects/AutomationFramework/src/test/resources/edgedriver_win64/msedgedriver.exe");
 
         System.setProperty("webdriver.chrome.driver", chromeFile.getAbsolutePath());
-        System.setProperty("webdriver.edge.driver", edgeFile.getAbsolutePath());
+//        System.setProperty("webdriver.edge.driver", edgeFile.getAbsolutePath());
 
         gDriver = new ChromeDriver();
-        mDriver = new EdgeDriver();
+//        mDriver = new EdgeDriver();
 
         gDriver.manage().window().maximize();
-        mDriver.manage().window().maximize();
+//        mDriver.manage().window().maximize();
 
         gDriver.get(path);
-        mDriver.get(path);
+//        mDriver.get(path);
 
     }
 
@@ -42,14 +42,14 @@ public abstract class ABaseTest {
     public void tearDown(){
 
         gDriver.quit();
-        mDriver.quit();
+//        mDriver.quit();
     }
 
     // Выполнение зависит от количества методов
     @AfterMethod
     public void goBack(){
         gDriver.navigate().back();
-        mDriver.navigate().back();
+//        mDriver.navigate().back();
     }
 
     @DataProvider(name = "dataProvider")
