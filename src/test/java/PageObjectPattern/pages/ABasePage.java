@@ -2,6 +2,7 @@ package PageObjectPattern.pages;
 
 import PageObjectPattern.test.ABaseTest;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public abstract class ABasePage {
     // ABasePage - Абстрактная страница, куда выносятся общие методы,
@@ -12,5 +13,7 @@ public abstract class ABasePage {
     public ABasePage(){
 
         this.driver = ABaseTest.getDriver();
+//        this.driver = ABaseTest.getDriver();
+//        PageFactory.initElements(driver, this);
     }
 }

@@ -3,10 +3,13 @@ package PageObjectPattern.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class SearchPage extends ABasePage{
 
     private By searchFieldBy = By.id("lst-id");
+//    @FindBy(id = "lst-id")
+//    private WebElement searchFieldBy;
 
     public SearchPage(){
         super();
