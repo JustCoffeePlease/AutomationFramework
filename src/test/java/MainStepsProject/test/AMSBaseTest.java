@@ -7,6 +7,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import utils.Browser;
+import utils.DriverFactory;
 
 import java.io.File;
 
@@ -25,10 +27,7 @@ public abstract class AMSBaseTest {
     @BeforeClass
     public void setUp() {
 
-        File chromeFile = new File("C:/Users/Алексей/IdeaProjects/AutomationFramework/src/test/resources/chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", chromeFile.getAbsolutePath());
-
-        driver = new ChromeDriver();
+        driver = DriverFactory.getDriver(Browser.CHROME);
         driver.manage().window().maximize();
         driver.get(path);
         steps = new MSSearchSteps();
