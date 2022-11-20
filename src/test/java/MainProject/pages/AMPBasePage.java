@@ -3,7 +3,7 @@ package MainProject.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import static MainProject.tests.AMPBaseTest.getDriver;
+import static MainProject.AMPBaseTest.getDriver;
 
 public abstract class AMPBasePage {
 

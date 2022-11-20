@@ -1,10 +1,8 @@
 package MainProject.tests;
 
+import MainProject.AMPBaseTest;
 import MainProject.pages.MPSearchPage;
 import MainProject.pages.MPSearchResultPage;
-import org.assertj.core.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class MPMainTest extends AMPBaseTest {
@@ -21,7 +19,8 @@ public class MPMainTest extends AMPBaseTest {
 
         MPSearchResultPage searchResultPage = new MPSearchResultPage();
 
-        searchResultPage.assertThatTopResultContainsCorrectText("Selenium WebDriver - Selenium documentation");
+//        searchResultPage.assertThatTopResultContainsCorrectText("Selenium WebDriver - Selenium documentation");
+        searchResultPage.assertThatTopResultContainsCorrectText("Пишем автотест с использованием Selenium Webdriver ...");
         searchResultPage.assertThatTopResultContainsProperAttributeText("LC20lb");
     }
 }

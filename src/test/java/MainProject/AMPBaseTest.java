@@ -1,42 +1,39 @@
-package MainStepsProject.test;
+package MainProject;
 
-import MainStepsProject.steps.MSSearchSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import utils.Browser;
-import utils.DriverFactory;
-import utils.PropertyReader;
 
 import java.io.File;
-import java.io.IOException;
 
-public abstract class AMSBaseTest {
+public abstract class AMPBaseTest {
 
     public static WebDriver getDriver() {
         return driver;
     }
 
     private static WebDriver driver;
-    MSSearchSteps steps;
+
 
     private String path = "https://www.google.com/";
 
     // Выполняется один раз
     @BeforeClass
-    public void setUp() throws IOException {
+    public void setUp() {
 
-        driver = DriverFactory.getDriver(Browser.CHROME);
-//        driver = other.DriverFactory.getDriver(other.PropertyReader.getBrowser());
+        File chromeFile = new File("C:/Users/Алексей/IdeaProjects/AutomationFramework/src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", chromeFile.getAbsolutePath());
 
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(path);
-//        driver.get(other.PropertyReader.getUrl());
 
-        steps = new MSSearchSteps();
+
     }
 
     @AfterClass
