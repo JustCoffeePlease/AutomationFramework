@@ -9,8 +9,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import utils.Browser;
 import utils.DriverFactory;
+import utils.PropertyReader;
 
 import java.io.File;
+import java.io.IOException;
 
 public abstract class AMSBaseTest {
 
@@ -25,11 +27,15 @@ public abstract class AMSBaseTest {
 
     // Выполняется один раз
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws IOException {
 
         driver = DriverFactory.getDriver(Browser.CHROME);
+//        driver = DriverFactory.getDriver(PropertyReader.getBrowser());
+
         driver.manage().window().maximize();
         driver.get(path);
+//        driver.get(PropertyReader.getUrl());
+
         steps = new MSSearchSteps();
     }
 
