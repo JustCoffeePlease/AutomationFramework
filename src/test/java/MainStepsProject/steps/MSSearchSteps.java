@@ -13,7 +13,7 @@ public class MSSearchSteps {
         searchPage.fillSearchField(keyword);
         searchPage.pressEnter();
 
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
 
         return new MSSearchResultsSteps();
 

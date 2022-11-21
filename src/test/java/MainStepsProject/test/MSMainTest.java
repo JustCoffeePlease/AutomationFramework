@@ -9,7 +9,7 @@ public class MSMainTest extends AMSBaseTest {
     public void openGoogleComInChromeTest(String text) throws InterruptedException {
 
         steps.executeSearchByKeyWord(text)
-                .verifyThatTopResultContainsCorrectText("Пишем автотест с использованием Selenium Webdriver ...")
+                .verifyThatTopResultContainsCorrectText("Selenium Webdriver")
                 .verifyThatTopResultContainsProperAttributeText("LC20lb");
 
     }

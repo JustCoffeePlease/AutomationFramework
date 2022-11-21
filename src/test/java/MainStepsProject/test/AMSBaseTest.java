@@ -13,6 +13,7 @@ import utils.PropertyReader;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public abstract class AMSBaseTest {
 
@@ -31,6 +32,9 @@ public abstract class AMSBaseTest {
 
         driver = DriverFactory.getDriver(Browser.CHROME);
 //        driver = other.DriverFactory.getDriver(other.PropertyReader.getBrowser());
+
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        // Если в течение 3 секунд результат не будет найден, тест упадет
 
         driver.manage().window().maximize();
         driver.get(path);
@@ -52,6 +56,6 @@ public abstract class AMSBaseTest {
     @DataProvider(name = "dataProvider")
     // Всегда возвращает Object
     public Object[][] dataProviderMethod() {
-        return new Object[][]{{"selenium java"},{"selenium python"}};
+        return new Object[][]{{"selenium java"}};//,{"selenium python"}};
     }
 }
