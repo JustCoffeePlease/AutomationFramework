@@ -33,7 +33,7 @@ public abstract class AMSBaseTest {
         driver = DriverFactory.getDriver(Browser.CHROME);
 //        driver = other.DriverFactory.getDriver(other.PropertyReader.getBrowser());
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         // Если в течение 3 секунд результат не будет найден, тест упадет
 
         driver.manage().window().maximize();

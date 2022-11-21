@@ -11,8 +11,8 @@ public class MSSearchSteps {
     public MSSearchResultsSteps executeSearchByKeyWord(String keyword) throws InterruptedException {
 
         searchPage.fillSearchField(keyword);
-        searchPage.pressEnter();
-
+//        searchPage.pressEnter();
+        searchPage.clickSearchButtonOrPressEnter();
 //        Thread.sleep(3000);
 
         return new MSSearchResultsSteps();

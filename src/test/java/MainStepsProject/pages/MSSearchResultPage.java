@@ -3,6 +3,8 @@ package MainStepsProject.pages;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,9 +25,12 @@ public class MSSearchResultPage extends AMSBasePage {
 
     public void assertThatTopResultContainsCorrectText(String expected) {
 
+        // explicit waits
+        wait.until(ExpectedConditions.visibilityOfAllElements(resultRowsElement));
+
 //        WebElement resultRow = driver.findElement(resultRowElement);
 
-        Assertions.assertThat(resultRowElement.isDisplayed()).as("Element has not been displayed!").isTrue();
+//        Assertions.assertThat(resultRowElement.isDisplayed()).as("Element has not been displayed!").isTrue();
         // Так как resultRowsElement это список WebElement, а не список String,
         // необходимо провести следующие действия:
         // Вытаскиваем весь текст, который содержится в WebElement, и далее
