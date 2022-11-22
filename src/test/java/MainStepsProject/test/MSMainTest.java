@@ -13,4 +13,10 @@ public class MSMainTest extends AMSBaseTest {
                 .verifyThatTopResultContainsProperAttributeText("LC20lb");
 
     }
+
+    @Test
+    public void verifySearchByVoiceTooltipOnGoogle(){
+        steps.openToolTip()
+                .verifyThatTooltipContainsProperText("Голосовой поиск");
+    }
 }

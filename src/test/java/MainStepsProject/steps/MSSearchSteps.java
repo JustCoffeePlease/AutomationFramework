@@ -25,4 +25,13 @@ public class MSSearchSteps {
         // чтобы автоматически перейти к instance нужного класса
     }
 
+    public MSSearchSteps openToolTip(){
+        searchPage.moveToVoiceSearchButton();
+        return this;
+    }
+
+    public MSSearchSteps verifyThatTooltipContainsProperText(String text){
+        searchPage.assertVoiceSearchTooltipContainsText(text);
+        return this;
+    }
 }

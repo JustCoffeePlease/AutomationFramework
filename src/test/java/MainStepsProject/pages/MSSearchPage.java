@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class MSSearchPage extends AMSBasePage {
 
     // Объявляем элемент и сразу используем поиск по локатору
@@ -14,6 +16,12 @@ public class MSSearchPage extends AMSBasePage {
 
     @FindBy(name = "btnK")
     private WebElement searchButton;
+
+    @FindBy(xpath = "//body")
+    private WebElement pageBody;
+
+    @FindBy(css = "svg.goxjub")
+    private WebElement searchByVoiceButton;
 
 //    WebElement searchField = driver.findElement(By.className("gLFyf"));
 //    private By searchField = By.className("gLFyf");
@@ -47,6 +55,20 @@ public class MSSearchPage extends AMSBasePage {
             pressEnter();
 
         }
+    }
+
+    public void moveToVoiceSearchButton(){
+        // Метод наведения курсосра
+        builder.moveToElement(searchByVoiceButton).build().perform();
+    }
+
+    public void assertVoiceSearchTooltipContainsText(String text){
+
+        assertThat(pageBody.findElements(By.xpath("//*[contains(text(), '"+ text +"')]"))
+                .size())
+                .as("Expected tooltip ["+text+" was not found")
+                .isNotZero();
+
     }
 }
 
