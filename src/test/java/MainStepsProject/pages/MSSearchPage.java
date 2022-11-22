@@ -29,6 +29,11 @@ public class MSSearchPage extends AMSBasePage {
         searchField.sendKeys(text);
     }
 
+    public void pasteToSearchField (String text){
+
+        pasteTextToElementFromClipboard(searchField, text);
+    }
+
     public void pressEnter() {
 //        WebElement SearchFieldElement = driver.findElement(searchField);
         searchField.sendKeys(Keys.RETURN);

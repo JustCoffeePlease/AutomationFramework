@@ -10,8 +10,9 @@ public class MSSearchSteps {
 
     public MSSearchResultsSteps executeSearchByKeyWord(String keyword) throws InterruptedException {
 
-        searchPage.fillSearchField(keyword);
+//        searchPage.fillSearchField(keyword);
 //        searchPage.pressEnter();
+        searchPage.pasteToSearchField(keyword);
         searchPage.clickSearchButtonOrPressEnter();
 //        Thread.sleep(3000);
 
